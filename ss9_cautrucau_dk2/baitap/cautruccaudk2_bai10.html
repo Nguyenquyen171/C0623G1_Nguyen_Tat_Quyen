@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết Phương trình tính giá điện</title>
+</head>
+<body>
+<script>
+    let soCU= +prompt('Nhập số điện cũ:');
+    let soMoi= +prompt('Nhập số điện mới:');
+    if (soCU>soMoi) {
+        alert('Vui Lòng Nhập Chính xác');
+    }
+    let soTien= (soMoi-soCU)*3800;
+    let soTienThuc= soTien+soTien*0.1;
+    alert('Số tiền điện là:' + soTienThuc);
+
+
+</script>
+
+</body>
+</html>

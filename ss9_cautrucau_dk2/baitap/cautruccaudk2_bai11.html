@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuế Thu Nhập Cá Nhân</title>
+</head>
+<body>
+<script>
+    debugger
+    let thuNhap= +prompt('Thu Nhập 1 năm (Triệu Đồng)');
+    if (thuNhap<60&&thuNhap>5){
+        alert('Thuế thu nhập cá nhân là:'+ thuNhap*0.05 + ('TĐồng'));
+    }
+     else if  (thuNhap>60&&thuNhap<=120){
+        alert('Thuế thu nhập cá nhân là:'+ thuNhap*0.1 + ('Triệu Đồng'));
+    }
+    else if (thuNhap>120&&thuNhap<=216){
+        alert('Thuế thu nhập cá nhân là:'+ thuNhap*0.15 + ('Triệu Đồng'));
+    }
+    else if(thuNhap>216&&thuNhap<=384){
+        alert('Thuế thu nhập cá nhân là:'+ thuNhap*0.20 + ('Triệu Đồng'));
+    }
+    else if (thuNhap>384&&thuNhap<=624){
+        alert('Thuế thu nhập cá nhân là:'+ thuNhap*0.25 + ('Triệu Đồng'));
+    }
+    else if (thuNhap>624){
+        alert('Thuế thu nhập cá nhân là:'+ thuNhap*0.3 + ('Triệu Đồng'));
+    }
+    else{
+        alert('Không phải nộp thuế')
+    }
+</script>
+
+</body>
+</html>

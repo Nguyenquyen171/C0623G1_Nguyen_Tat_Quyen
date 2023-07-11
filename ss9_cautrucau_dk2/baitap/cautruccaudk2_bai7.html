@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giai Phuong Trinh Bac 1 </title>
+</head>
+<body>
+<h2> Phương trình là: ax*x+b*x+c=0</h2>;
+<script>
+    let soA = +prompt('Nhập số a');
+    if (soA === 0){
+        alert('Pương trình vô nghiệm');
+    }
+    let soB = +prompt('Nhập số b');
+    let soC = +prompt('Nhập số c');
+    let delTa= soB*soB- 4*soA*soC ;
+    let nghiemKep= -soB/2*soA;
+    let haiNghiem=-soB+((Math.sqrt(delTa))/2*soA);
+    let haiNghiemAm=-soB-((Math.sqrt(delTa))/2*soA);
+    if (delTa < 0) {
+        alert('Phương triình vô nghiệm');
+    }
+    if  (delTa===0) {
+        alert('Phương trình có 2 nghiệm kép' + nghiemKep  );
+    }
+    if (delTa > 0) {
+        alert(('Phương trình bậc 2 có 2 nghiệm') + haiNghiem + ('và') + haiNghiemAm);
+    }
+
+
+</script>
+
+
+</body>
+</html>
