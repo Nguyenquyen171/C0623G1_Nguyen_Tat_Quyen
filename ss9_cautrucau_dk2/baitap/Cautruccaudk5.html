@@ -8,15 +8,11 @@
 <script>
     let middle = +prompt("Nhập số điểm giữa kỳ");
     let finaLly = +prompt("Nhập số điểm cuối kỳ");
-    let ends = (middle+finaLly)/2;
-        if (ends>=8) {
-            document.write('Học sịnh giỏi')
-        }
-        if (6.5<=ends && ends<8)
-    {
+    let ends = (middle + finaLly) / 2;
+    if (ends >= 8) {document.write('Học sịnh giỏi')
+    }else if (6.5 <= ends && ends < 8) {
         document.write('Học sịnh Khá');
-    }
-        if (ends<6.5){
+    }else if (ends < 6.5) {
         document.write('Học sịnh dốt');
     }
 
