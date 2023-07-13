@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soHienThi = + prompt("Nhập n số đầu tiên trong dãy fibonacci ");
+    let daySo = "";
+    let a1 = 0;
+    let a2 = 1;
+    let nextnumber;
+    for (let i = 0; i < soHienThi ; i++) {
+        nextnumber = a1 + a2;
+         daySo += a1 + "<br/> ";
+        a1  = a2;
+        a2 = nextnumber;
+    } document.write(daySo + "<br/>");
+
+
+
+</script>
+
+</body>
+</html>
