@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    debugger
+    let a1 = +prompt("Nhập số năm mượn");
+    let a2 = +prompt("Nhập Số tiền Mượn ");
+    let laiSuat;
+    for (let i = 0; i <= a1; i++) {
+        laiSuat = a2 + (a2 * 0.1);
+        a2 = laiSuat;
+    }
+    document.write("Số Tiền Phải Trả Sau" + (a1) + "năm là:" + (laiSuat));
+</script>
+
+</body>
+</html>
