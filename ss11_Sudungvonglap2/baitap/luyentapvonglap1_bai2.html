@@ -6,15 +6,17 @@
 </head>
 <body>
 <script>
-  let nhietDo= +prompt('Nhiệt Độ Của bạn');
-  if (nhietDo<20) {
-    alert('Hãy tăng nhiệt độ');
-  }
-    if (nhietDo>100) {
-      alert('Hãy giảm nhiệt độ');
-    }
-    else
-      alert('Nhiệt độ hiện giờ:'+ nhietDo);
+    let nhietDo;
+    do {
+        nhietDo = +prompt("Nhập nhiệt độ");
+        if (nhietDo > 100) {
+            alert("Bạn cần giảm nhiệt độ");
+        }
+        if (nhietDo <20 ){
+            alert ("Bạn cần tăng nhiệt độ");
+        }
+    } while (nhietDo <20 || nhietDo >100);
+    document.write("Nhiệt độ bình thường")
 </script>
 
 </body>
