@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let count = 0;
+    let tong = 0;
+    for (let i = 0; ; i++) {
+        if (i % 7 === 0) {
+            document.write(i + "<br>")
+            tong += i;
+            count++;
+        }
+        if (count === 30) {
+            break;
+        }
+    }
+    document.write("tổng của 30 số chia hết cho 7 " + tong);
+</script>
+</body>
+</html>
