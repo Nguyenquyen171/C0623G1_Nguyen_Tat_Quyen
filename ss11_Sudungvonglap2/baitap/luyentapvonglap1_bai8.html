@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let min = +prompt("Số tối thiểu: ");
+    let max = +prompt("Số tối đa: ");
+    let random = Math.floor((Math.random() * max) + 1);
+    let count = 0;
+    do {
+        let reslut = +prompt("Số bạn đoán là");
+        if (reslut !== random) {
+            count = count + 1;
+        } else {
+            alert("Bạn đã đoán đúng");
+            break;
+        }
+        if (count <= 3) {
+            alert("bạn đã đoán sai");
+
+        } else {
+            alert("Bạn đã đoán quá số lần");
+            break;
+        }
+    }
+    while (true)
+</script>
+</body>
+</html>
