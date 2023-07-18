@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // debugger
+    // let numbers = +prompt('Nhập giá trị');
+    // for (let i = 0; i < numbers.length; i++) {
+    //     document.write("Phần tử ở vị trí: " + i + ". Có giá trị là: " + numbers[i] + "<br>");
+    // }
+    // for (let j = numbers.length - 1; j >= 0; j--) {
+    //     document.write("Phần tử ở vị trí: " + j + ". Có giá trị là: " + numbers[j] + "<br>");
+    // } debugger
+
+    let phanTu = +prompt("Số phần tử nhập vào");
+    let numbers = [];
+    for (let i = 0; i < phanTu; i++) {
+        numbers[i] = +prompt("Nhập số " + (i + 1));
+    }
+    document.write(numbers);
+    let phanTuSau = +prompt("Số phần tử nhập vào");
+    let numberSecond = [];
+    for (let j = numbers.length - 1; j >= 0; j--) {
+        numberSecond.push(numbers[j]);
+    }
+    document.write(numberSecond);
+</script>
+
+</body>
+</html>

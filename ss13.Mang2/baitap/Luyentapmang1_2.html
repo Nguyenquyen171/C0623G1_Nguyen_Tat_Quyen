@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr2d = [];
+    let max = [];
+    let count = [];
+    for (let i = 0; i < 10; i++) {
+        arr2d[i] = +prompt('Nhập số bất kì' + (i++));
+        for (let j = 0; j < arr2d.length; j++) {
+            if (max < arr2d[j]) {
+                max = arr2d[j];
+                count = j;
+            }
+        }
+    }
+    document.write("Số lớn nhất là: " + max + "<br> Vị trí của max " + count)
+</script>
+
+</body>
+</html>

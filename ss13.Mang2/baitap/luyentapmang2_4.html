@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // document.write("Số từ trong chuỗi là: " + (count + 1));
+    // for (let j = 0; j < string.length; i++) {
+    //     if (count[j] % 1 === 0) {
+    //         count.push(string[j]);
+    //     }
+    // }
+    // document.write(result.count);
+
+    // debugger
+    // let string = prompt("Nhập chuỗi ký tự: ");
+    // let count = 0;
+    // for (let i = 0; i < string.length - 1 ; i++) {
+    //     if (string[i] === " " && string[i + 1] !== " ") {
+    //         count++;
+    //     }
+    // }
+    // let newString = prompt("Nhập chuỗi cần đếm kí tự");
+    // document.write("Số kí tự của chuỗi '"+newString+"' là: "+newString.length);
+    let string = prompt('Nhập dãy giá trị bạn muốn');
+    let count = 0;
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] === " ") {
+            count += 1;
+        }
+    }
+    document.write(count + 1);
+
+</script>
+</body>
+</html>

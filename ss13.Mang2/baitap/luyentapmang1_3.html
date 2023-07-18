@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = [312, 4, 3244, 346, 768, 6796, 1, 8967];
+    let sum = 0;
+    let max = numbers[0];
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] > max) {
+            max = numbers[i];
+        }
+    }
+    document.write("Số lớn nhất của dãy số trên là: " + max + "<br/>");
+    for (let i = 0; i < numbers.length; i++) {
+        sum = sum + numbers[i];
+    }
+    let average = sum / (numbers.length);
+    document.write("Trung bình cộng của dãy số trên là: " + average);
+
+</script>
+
+</body>
+</html>
