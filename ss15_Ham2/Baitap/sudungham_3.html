@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let number1 = +prompt("Nhập số thứ 1:");
+    let number2 = +prompt("Nhập số thứ 2:");
+    function doiSo(number1, number2) {
+        if (number1 > number2) {
+            alert("Số 1 lớn hơn số 2: " + number1)
+        } else
+        {
+            alert("Số 2 lớn hơn số 1: " + (number1 + number2));
+        }
+    }doiSo(number1, number2)
+</script>
+
 </body>
 </html>

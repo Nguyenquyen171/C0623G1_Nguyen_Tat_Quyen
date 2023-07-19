@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    debugger
+    let dayKiTu = ["q","b","y","u","f","f","b","c"];
+    let kiTu = prompt("Nhập kí tự bạn muốn kiểm tra:");
+    let count=0
+    function checkKiTu() {
+        for (i = 0; i < dayKiTu.length; i++) {
+            if (dayKiTu[i] === kiTu) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            document.write("Số lần xuất hiện của kí tự là:" + count)
+        } else {
+            document.write("-1")
+        }
+    }
+    checkKiTu();
+
+</script>
+</body>
+</html>

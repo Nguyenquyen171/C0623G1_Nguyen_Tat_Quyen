@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let star1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let star2 = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let inputStart = prompt("Nhập tên sao: ")
+    let indexStart2;
+
+    function isExistStar(inputStart) {
+        for (let i = 0; i < star1.length; i++) {
+            if (star1[i] === inputStart) {
+                indexStart2 = i;
+                return true;
+            }
+        }
+        return false;
+    }
+    let isExistStart = isExistStar(inputStart);
+
+    function searchStar() {
+        if (isExistStart) {
+            document.write("Tên ngôi sao là: " + star2[indexStart2])
+        } else {
+            document.write("Không tìm thấy ngôi sao nào")
+        }
+    }
+    searchStar();
+</script>
+
+</body>
+</html>

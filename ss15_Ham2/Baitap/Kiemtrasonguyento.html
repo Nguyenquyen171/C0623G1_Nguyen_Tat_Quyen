@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+
+    let number = +prompt('Nhập số kiểm tra:');
+    let count=0;
+    function isPrime(number) {
+        for (let i = 0; i <= number; i++) {
+            count++;
+        }
+            if (count === 2){
+                alert('Số này là số nguyên tố');
+            } else{
+                alert('Số này không phải là số nguyên tố');
+            }
+        }
+    isPrime(number)
+</script>
+
 </body>
 </html>
