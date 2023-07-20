@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Sử dụng lớp vừa định nghĩa để xây dựng một chương trình JavaScript với kịch bản như sau:
+    //
+    //     Khởi tạo một đối tượng Temperature.
+    //
+    //     Gán giá trị độ C cho đối tượng ở nhiệt độ 25 độ.
+    //
+    //     Hiển thị ra màn hình nhiệt độ F và độ Kenvin tương ứng.
+    let inputC = +prompt("Nhập độ C :")
+    class Temperature {
+        constructor(celsius) {
+            this.celsius = celsius;
+        }
+        setCelsius (newCelsius) {
+            this.celsius = newCelsius;
+        }
+        getCelsius () {
+            return this.celsius;
+        }
+        getFahrenheit() {
+            return this.celsius * 9/5 +22;
+        }
+
+        getKevin () {
+            return this.celsius + 273.15;
+        }
+    }
+    let temperature = new Temperature(25);
+    temperature.setCelsius(inputC);
+    temperature.getCelsius();
+    temperature.getFahrenheit();
+    temperature.getKevin();
+    document.write("Độ C dùng để chuyển đổi: "+temperature.getCelsius()+"<br>"+ "Độ F: "+temperature.getFahrenheit()+"<br>"+ "Độ K: "+temperature.getKevin()+"<br>");
+</script>
+
+</body>
+</html>

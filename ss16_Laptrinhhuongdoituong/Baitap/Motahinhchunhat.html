@@ -5,38 +5,45 @@
     <title>Title</title>
 </head>
 <body>
-<canvas id="Hinh Chữ Nhật" width="600" height="600"><</canvas>
+<p id="canvas"></p>
 <script>
     class Rectangle {
         constructor(width, height) {
             this.width = width;
             this.height = height;
         }
+
+        getWidth() {
+            return this.width;
+        }
+
+        getHeight() {
+            return this.height;
+        }
+
+        numberArea() {
+            return this.width * this.height;
+        }
+
+        numberPerimeter() {
+            return ((this.width + this.height)*2);
+        }
+        getInfoRectangle(){
+            document.write("Chiều dài: "+this.width+"<br>"+
+                "Chiều cao: "+this.height+"<br>"+
+                "Diện tích: "+this.numberArea()+"<br>"+
+                "Chu vi: "+this.numberPerimeter());
+        }
+        creatCanvas(){
+            document.getElementById("canvas").style.width = this.width+"px";
+            document.getElementById("canvas").style.height = this.height+"px";
+            document.getElementById("canvas").style.background = "yellow";
+        }
     }
 
-    setWidth(newWidth){
-        this.width = newWidth;
-    }
-
-    getWidth(){
-        return this.width;
-    }
-    setHeight(newheight){
-        this.height = newHeight;
-    }
-    getHeight(){
-        return this.Height;
-    }
-    getArea() {
-        return this.width * this.height;
-    }
-
-    getPerimeter() {
-        return (this.width + this.height) * 2;
-    }
-    getInformation(){
-        document.write()
-
+    let rectangle = new Rectangle(300, 150);
+    rectangle.getInfoRectangle();
+    rectangle.creatCanvas();
 
 </script>
 </body>
