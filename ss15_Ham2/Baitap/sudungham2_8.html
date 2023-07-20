@@ -8,12 +8,13 @@
 <script>
     debugger
     let numbers = [123, 12, 4, 2, 5, 26, 2];
-    document.write("Mảng số nguyên trước khi đổi:" + numbers + "<br>");
-    function doiDaySo(numbers) {
-        numbers = numbers.reverse()
+    function swap(numbers) {
+        for (i = numbers.length - 1; i >= 0; i--) {
+            document.write(numbers[i] + ",");
+        }
     }
-    doiDaySo(numbers);
-    document.write("Mảng số nguyên sau khi đổi:" + numbers);
+
+    swap(numbers);
 </script>
 
 </body>
