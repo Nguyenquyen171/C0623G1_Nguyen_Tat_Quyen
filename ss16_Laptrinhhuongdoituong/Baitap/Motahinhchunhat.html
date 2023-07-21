@@ -13,30 +13,24 @@
             this.height = height;
         }
 
-        getWidth() {
-            return this.width;
-        }
-
-        getHeight() {
-            return this.height;
-        }
-
         numberArea() {
             return this.width * this.height;
         }
 
         numberPerimeter() {
-            return ((this.width + this.height)*2);
+            return ((this.width + this.height) * 2);
         }
-        getInfoRectangle(){
-            document.write("Chiều dài: "+this.width+"<br>"+
-                "Chiều cao: "+this.height+"<br>"+
-                "Diện tích: "+this.numberArea()+"<br>"+
-                "Chu vi: "+this.numberPerimeter());
+
+        getInfoRectangle() {
+            document.write("Chiều dài: " + this.width + "<br>" +
+                "Chiều cao: " + this.height + "<br>" +
+                "Diện tích: " + this.numberArea() + "<br>" +
+                "Chu vi: " + this.numberPerimeter());
         }
-        creatCanvas(){
-            document.getElementById("canvas").style.width = this.width+"px";
-            document.getElementById("canvas").style.height = this.height+"px";
+
+        creatCanvas() {
+            document.getElementById("canvas").style.width = this.width + "px";
+            document.getElementById("canvas").style.height = this.height + "px";
             document.getElementById("canvas").style.background = "yellow";
         }
     }
