@@ -2,87 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Adam và Eva</title>
 </head>
 <body>
 <script>
     class Apple {
-        constructor(weight, mass) {
+        constructor(weight) {
             this.weight = weight;
-            this.mass = mass;
         }
-        let weight = (10);
 
+        getWeight() {
+            return this.weight;
+        }
 
-        // set Weight(newWeight) {
-        //     this.weight = newWeight;
-        // }
-        //
-        // get Weight() {
-        //     return this.weight;
-        // }
-        //
-        // set Mass(newMass) {
-        //     this.mass = newMass;
-        // }
-        //
-        // get Mass() {
-        //     return this.mass;
-        // }
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        isEmpty() {
+            if (this.weight <= 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        decreaseApple() {
+            if (this.isEmpty()) {
+                alert("Táo hết rồi");
+            } else {
+                this.weight--;
+            }
+        }
     }
 
     class Human {
-        constructor(name, gender, adamweight, talk, eat, checkweight) {
+        constructor(name, gender, weightH) {
             this.name = name;
             this.gender = gender;
-            this.adamweight = adamweight;
-            this.talk = talk;
-            this.ea = eat;
-            this.checkweight = checkweight;
+            this.weightH = weightH;
         }
 
+        getName() {
+            return this.name;
+        }
 
-        // set Name(newName) {
-        //     this.name = newName;
-        // }
-        //
-        // get Name() {
-        //     return this.name;
-        // }
-        //
-        // set Talk(newTalk) {
-        //     this.talk = newTalk;
-        // }
-        //
-        // get Talk() {
-        //     return this.talk;
-        // }
-        //
-        // set AdamWeight(newAdamWeight) {
-        //     this.adamweight = newAdamWeight
-        // }
-        //
-        // get AdamWeight() {
-        //     return this.adamweight;
-        // }
-        //
-        // set Gender(newGender) {
-        //     this.gender = newGender;
-        // }
-        //
-        // get Gender() {
-        //     return this.gender
-        // }
-        //
-        // set Checkweight(newCheckweight) {
-        //     this.checkweight = newCheckweight
-        // }
-        // get Checkweight(){
-        //     return this.checkweight
-        // }
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeightH() {
+            return this.weightH;
+        }
+
+        setWeightH(weightH) {
+            this.weightH = weightH;
+        }
+
+        checkGender() {
+            if (this.gender) {
+                alert("Nữ");
+            } else {
+                alert("Nam");
+            }
+        }
+
+        talk(string) {
+            alert(string);
+        }
+
+        eat(apple) {
+            if (apple.getWeight() > 0) {
+                alert(this.name + " đã ăn 1 miếng táo");
+                apple.decreaseApple();
+                this.weightH++;
+            } else {
+                alert("Hết táo rồi");
+            }
+        }
+
     }
 
-</script>
+    let eva = new Human("Eva", true, 45);
+    let adam = new Human("Adam", false, 50);
+    let apple = new Apple(5);
+    apple.setWeight(8);
+    eva.checkGender();
+    eva.talk("hello Adam");
+    adam.talk("hi Eva");
 
-<!--</body>-->
+    adam.eat(apple);
+    document.write("Cân nặng quả táo: " + apple.weight + "<br/>");
+    document.write("Cân nặng của " + adam.name + " là " + adam.weightH + "<br/>");
+
+    eva.eat(apple);
+    document.write("Cân nặng quả táo: " + apple.weight + "<br/>");
+    document.write("Cân nặng của " + adam.name + " là " + eva.weightH + "<br/>");
+</script>
+</body>
 </html>
