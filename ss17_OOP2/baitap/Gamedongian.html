@@ -1,0 +1,162 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="game"></div>-->
+
+<!--<script>-->
+<!--  // function Hero(image, top, left, size){-->
+<!--  //   this.image = image;-->
+<!--  //   this.top = top;-->
+<!--  //   this.left = left;-->
+<!--  //   this.size = size;-->
+<!--  //-->
+<!--  //   this.getHeroElement = function(){-->
+<!--  //     return '<img width="'+ this.size + '"' +-->
+<!--  //             ' height="'+ this.size + '"' +-->
+<!--  //             ' src="' + this.image +'"' +-->
+<!--  //             ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" </img>';-->
+<!--  //   }-->
+<!--  //-->
+<!--  //   this.moveRight = function(){-->
+<!--  //     this.left += 20;-->
+<!--  //     console.log('ok: ' + this.left);-->
+<!--  //   }-->
+<!--  //-->
+<!--  // }-->
+<!--  //-->
+<!--  // let hero = new Hero('pikachu.png', 20, 30, 200);-->
+<!--  //-->
+<!--  // function start(){-->
+<!--  //   if(hero.left < window.innerWidth - hero.size){-->
+<!--  //     hero.moveRight();-->
+<!--  //   }-->
+<!--  //   document.getElementById('game').innerHTML = hero.getHeroElement();-->
+<!--  //   setTimeout(start, 500)-->
+<!--  // }-->
+<!--  //-->
+<!--  // start();-->
+<!--  // class Hero {-->
+<!--  //     constructor(name, image) {-->
+<!--  //         this.name = name;-->
+<!--  //         this.image = image;-->
+<!--  //         this.speed = 20;-->
+<!--  //         this.positionX = 0;-->
+<!--  //         this.positionY = 0;-->
+<!--  //     }-->
+<!--  //-->
+<!--  //     // Phương thức để thay đổi ảnh nhân vật-->
+<!--  //     changeImage(newImage) {-->
+<!--  //         this.image = newImage;-->
+<!--  //     }-->
+<!--  //-->
+<!--  //     // Phương thức để di chuyển nhân vật-->
+<!--  //     move(direction) {-->
+<!--  //         switch (direction) {-->
+<!--  //             case 'up':-->
+<!--  //                 this.positionY -= this.speed;-->
+<!--  //                 break;-->
+<!--  //             case 'down':-->
+<!--  //                 this.positionY += this.speed;-->
+<!--  //                 break;-->
+<!--  //             case 'left':-->
+<!--  //                 this.positionX -= this.speed;-->
+<!--  //                 break;-->
+<!--  //             case 'right':-->
+<!--  //                 this.positionX += this.speed;-->
+<!--  //                 break;-->
+<!--  //             default:-->
+<!--  //                 console.log('Invalid direction');-->
+<!--  //                 break;-->
+<!--  //         }-->
+<!--  //     }-->
+<!--  // }-->
+<!--  //-->
+<!--  // // Khởi tạo đối tượng Hero-->
+<!--  // const hero = new Hero('Superman', 'superman.png');-->
+
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="submit" value="Bật Công Tắc" onclick="turnOn()">
+<input type="submit" value="Tắt Công Tắc" onclick="turnOff()">
+<input type="submit" value="Check Status" onclick="checkStatus()">
+
+<script>
+    class SwitchButton {
+        constructor(status,lamp) {
+            this.status = status;
+            this.lamp = lamp;
+        }
+        getStatusSwitch(){
+            if (this.status){
+                return "Đang bật";
+            } else {
+                return "Đang tắt";
+            }
+        }
+
+        connectToLamp(EletricLamp){
+            return this.lamp = EletricLamp;
+        }
+
+        switchOn(){
+            if (this.status){
+                console.log("Bóng đèn đã và đang được bật");
+            } else {
+                this.status = true;
+                this.lamp.status = true;
+                console.log("Bật bóng đèn thành công")
+            }
+        }
+
+        switchOff(){
+            if (!this.status){
+                console.log("Bóng đèn đã được tắt từ trước");
+            } else {
+                this.status = false;
+                this.lamp.status = false;
+                console.log("Tắt bóng đèn thành công");
+            }
+        }
+    }
+
+    class EletricLamp {
+        constructor(status) {
+            this.status = status;
+        }
+        getStatusLamp(){
+            if (this.status){
+                return "Đang bật";
+            } else {
+                return "Đang tắt";
+            }
+        }
+    }
+    let electriclamp = new EletricLamp(false);
+    let switchBt = new SwitchButton(false,electriclamp);
+
+    function turnOn() {
+        switchBt.switchOn();
+    }
+    function turnOff() {
+        switchBt.switchOff();
+    }
+    function checkStatus(){
+        console.log("Trạng thái của nút là "+switchBt.getStatusSwitch()+
+            ";Bóng đèn "+electriclamp.getStatusLamp());
+    }
+</script>
+</body>
+</html>
