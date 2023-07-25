@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let thuNhap = +prompt("Nhập số lương của bạn");
+    if (thuNhap >= 15) {
+        document.write("Bạn phải trả 20% số tien thuế là:" + (thuNhap - thuNhap * 0.2) + "Triệu đồng");
+    }else if (thuNhap > 7) {
+        document.write("Bạn phải trả 15% số tien thuế là:" + (thuNhap - thuNhap * 0.15) + "Triệu đồng");
+    } else{
+        document.write("Bạn phải trả 10 số tien thuế là:"+ (thuNhap-thuNhap*0.1) + "Triệu đồng");
+    }
+
+</script>
+
+</body>
+</html>
