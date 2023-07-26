@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function maxFraction(numberA, numberB) {
+        let maxIndex = 0;
+        let maxFractionValue = numberA[0] / numberB[0];
+
+        for (let i = 1; i < numberA.length; i++) {
+            let fractionValue = numberA[i] / numberB[i];
+
+            if (fractionValue > maxFractionValue) {
+                maxIndex = i;
+                maxFractionValue = fractionValue;
+            }
+        }
+        return maxIndex;
+    }
+    let numberA = [5, 2, 5];
+    let numberB = [6, 3, 4];
+    let result = maxFraction(numberA, numberB);
+    console.log(maxFraction);
+
+</script>
+
+</body>
+</html>
