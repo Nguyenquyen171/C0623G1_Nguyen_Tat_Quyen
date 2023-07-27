@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tinhTongSoChan(m, n) {
+        let matrix = [];
+        let sum = 0;
+        let soChan = [];
+        for (let i = 0; i < m; i++) {
+            matrix[i] = [];
+            for (let j = 0; j < n; j++) {
+                matrix[i][j] = parseInt(prompt(`Nhập giá trị cho phần tử ở hàng ${i + 1} cột ${j + 1}`));
+                if (matrix[i][j]%2===0){
+                    sum+=matrix[i][j];
+                    soChan.push(matrix[i][j]);
+                }
+            }
+        }
+        console.log(matrix);
+        console.log("So chan duoc them vao "+soChan);
+        console.log("Tong so chan "+sum);
+        //     matrix[i] = [];
+        //     for (let j = 0; j < n; j++) {
+        //         matrix[i][j] = parseInt(prompt(`Nhập giá trị cho phần tử ở hàng ${i + 1} cột ${j + 1}`));
+        //     }
+        // }
+        // let sum = 0;
+        // let soChan = [];
+        // for (let i = 0; i < m; i++) {
+        //     for (let j = 0; j < n; j++) {
+        //         if (matrix[i][j] % 2 === 0) { // Kiểm tra số chẵn
+        //             soChan.push(matrix[i][j]);
+        //             sum += matrix[i][j]; // Cộng số chẵn vào tổng
+        //         }
+        //     }
+        // }
+        // return sum;
+    }
+    let m = parseInt(prompt("Nhập số hàng của ma trận"))
+    let n = parseInt(prompt("Nhập số cột của ma trận"));
+    // console.log("Các số chẵn trong ma trận là:" + soChan);
+    tinhTongSoChan(m, n)
+</script>
+
+</body>
+</html>
