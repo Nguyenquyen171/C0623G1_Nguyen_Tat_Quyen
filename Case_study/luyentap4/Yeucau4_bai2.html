@@ -6,31 +6,24 @@
 </head>
 <body>
 <script>
-    javascript
-    function commonCharacterCount(s1, s2) {
-        let count = Array(26).fill(0);
-        let commonCount = 0;
-
-        for (let i = 0; i < s1.length; i++) {
-            count[s1.charCodeAt(i) - 97]++;
+    let string = prompt("Nhap xau ki tu muon dem");
+    let arrayNew = [];
+    // while (string) {
+    //     if (!isNaN(string)) {
+    //         alert("Bạn đã nhập một số. Vui lòng nhập lại!");
+    //         let string = prompt("Nhap xau ki tu muon dem");
+    //     } else {
+    //         document.write("Xau ki tu nhap vao: " + string + "<br>")
+    //
+    //     }
+    // }
+    for (let i = 0; i < string.length; i++) {
+        if (arrayNew.indexOf(string[i]) === -1) {// hàm index nếu giá trị k đc tim thấy thì sẽ trả về -1
+            arrayNew.push(string[i]);// đẩy giá trị k tìm được vào mãng rỗng
         }
+    }document.write("Xau ki tu nhap vao: " + string + "<br>")
+    document.write("Co " + arrayNew.length + " ki tu khac nhau la: " + arrayNew);
 
-        for (let i = 0; i < s2.length; i++) {
-            count[s2.charCodeAt(i) - 97]--;
-        }
-
-        for (let i = 0; i < count.length; i++) {
-            if (count[i] > 0) {
-                commonCount += count[i];
-            }
-        }
-
-        return commonCount;
-    }
-
-    let s1 = "aabcc";
-    let s2 = "adcaa";
-    console.log(commonCharacterCount(s1, s2));
 </script>
 </body>
 </html>
