@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách học viên</title>
+    <style>
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            transition: border-color 0.3s ease;
+        }
+
+        table:hover {
+            border-color: #333;
+        }
+    </style>
+</head>
+<body>
+<h2>Danh sách học viên</h2>
+<div id="display"></div>
+<br>
+<button onclick="addStudent()">Thêm học viên </button>
+<button onclick="editStudent()">Sửa thông tin học viên</button>
+<button onclick="deleteStudent()">Xóa học viên</button>
+<script>
+    class Student {
+        constructor(id, name, grade, email, birthDay){
+            this.id = id;
+            this.name = name;
+            this.grade = grade;
+            this.email = email;
+            this.birthDay = birthDay;
+        }
+    }
+    let student1 = new Student("001", "Nguyễn Văn A", "C0623G1", "a@gmail.com", "01/02/2001");
+    let student2 = new Student("002", "Nguyễn Văn B", "C0623G1", "b@gmail.com", "01/02/2001");
+    let student3 = new Student("003", "Nguyễn Văn C", "C0623G1", "c@gmail.com", "01/02/2001");
+    let student = [student1, student2, student3];
+    display(student);
+
+    function display(arr){
+        let table = "<table border='1' style='border-collapse: collapse'>" +
+            "<tr>" +
+            "<th>Mã học viên</th>" +
+            "<th>Tên</th>" +
+            "<th>Lớp</th>" +
+            "<th>Email</th>" +
+            "<th>Ngày sinh</th>" +
+            "</tr>";
+        for (let i = 0; i < arr.length; i++) {
+            table += "<tr>" +
+                "<td>" + arr[i].id + "</td>" +
+                "<td>" + arr[i].name + "</td>" +
+                "<td>" + arr[i].grade + "</td>" +
+                "<td>" + arr[i].email + "</td>" +
+                "<td>" + arr[i].birthDay + "</td>" +
+                "</tr>";
+        }
+        table += "</table>";
+        document.getElementById("display").innerHTML = table;
+    }
+
+    function addStudent(){
+        let newId = prompt("Nhập mã học viên :");
+        let newName = prompt("Nhập tên học viên (tối đa 50 ký tự):");
+        let newGrade = prompt("Nhập lớp (1-6):");
+        let newEmail = prompt("Nhập email:");
+        let newBirthday = prompt("Nhập ngày sinh (dd/mm/yyyy):");
+
+        if (!newId.match(/^HV-\d{4}$/)) {
+            alert("Mã học viên không hợp lệ!");
+            return;
+        }
+
+        if (newName.length > 50) {
+            alert("Tên học viên vượt quá 50 ký tự!");
+            return;
+        }
+
+        if (newGrade < 1 || newGrade > 6) {
+            alert("Module không hợp lệ!");
+            return;
+        }
+
+        if (!newBirthday.match(/^\d{2}\/\d{2}\/\d{4}$/)) {
+            alert("Ngày sinh không hợp lệ!");
+            return;
+        }
+
+        let newStudent = new Student(newId, newName, newGrade, newEmail, newBirthday);
+        student.push(newStudent);
+        display(student);
+    }
+
+    function editStudent(){
+        let idStudent = prompt("Nhập mã học viên cần sửa thông tin:");
+        let count = 0;
+        for (let i = 0; i < student.length; i++){
+            if (idStudent === student[i].id){
+                student[i].name = prompt("Nhập lại tên học viên:");
+                student[i].grade = prompt("Nhập lại lớp:");
+                student[i].email = prompt("Nhập lại email:");
+                student[i].birthDay = prompt("Nhập lại ngày sinh:");
+                count++;
+            }
+        }
+        if(count === 0){
+            alert("Mã học viên không tồn tại");
+        }
+        display(student);
+    }
+
+    function deleteStudent(){
+        let idStudent = prompt("Nhập mã học viên cần xóa thông tin:");
+        let count = 0;
+        for (let i = 0; i < student.length; i++){
+            if (idStudent === student[i].id){
+                student.splice(i, 1);
+                count++;
+            }
+        }
+        if(count === 0){
+            alert("Mã học viên không tồn tại");
+        }
+        display(student);
+    }
+</script>
+</body>
+</html>

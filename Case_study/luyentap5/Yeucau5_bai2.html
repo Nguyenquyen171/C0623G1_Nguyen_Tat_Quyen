@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function lietKeVaDemSoNguyenTo(arr) {
+        let soNguyenTo = [];
+        let count = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                let number = arr[i][j];
+                let isPrime = true;
+
+                if (number < 2) {
+                    isPrime = false;
+                } else {
+                    for (let k = 2; k <= Math.sqrt(number); k++) {
+                        if (number % k === 0) {
+                            isPrime = false;
+                            break;
+                        }
+                    }
+                }
+
+                if (isPrime) {
+                    soNguyenTo.push(number);
+                    count++;
+                }
+            }
+        }
+
+        return { soNguyenTo, count };
+    }
+    let arr = [[2, 3, 4], [5, 6, 7], [8, 9, 10]];
+    console.log(result.soNguyenTo); // [2, 3, 5, 7]
+    console.log(result.count); // 4
+
+</script>
+</body>
+</html>
